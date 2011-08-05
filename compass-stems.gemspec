@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "compass-stems"
 
   s.files       = %w(README.mkdn)
-  s.files       += Dir.glob("lib/**/*.*)
-  s.files       += Dir.glob("templates/**/*.*)
+  s.files       += Dir.glob("lib/**/*.*")
+  s.files       += Dir.glob("templates/**/*.*")
 
   s.rubygems_version = %q{1.3.6}
   s.add_dependency("compass", [">= 0.11.beta.5"])
