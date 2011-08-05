@@ -1,0 +1,4 @@
+compass-stems
+=============
+
+A compass extension that creates stem images for popups. Uses the chunky_png library. 

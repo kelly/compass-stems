@@ -1,0 +1,28 @@
+@mixin stem(
+  $color, 
+  $width: 20px, 
+  $direction: top, 
+  $border-color:  $color, 
+  $border-inset-color: false, 
+  $enable-gradient-background: false){
+  $height: $width / 2;
+  position: relative;
+  &:after {
+    content: '\00a0';
+    background: stem($color, $width, $direction, $border-color, $border-inset-color, $enable-gradient-background) no-repeat 50% 50%;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    @if $direction == left or $direction == right {
+      $flipped_height:  $width; /* image flipped */
+      $flipped_width:  $height;
+      @if $border-inset-color { #{$direction}: -($flipped_width - 1); } @else { #{$direction}: -$flipped_width ; }
+      width: $flipped_width;
+      height: $flipped_height;
+    } @else {
+      @if $border-inset-color { #{$direction}: -($height - 1); } @else { #{$direction}: -$height; }
+      width: 100%;
+      height: $height;
+    }
+  }
+}
